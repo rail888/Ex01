@@ -41,7 +41,7 @@ pipeline {
         }*/
         stage('Deploy to K3s') {
             steps {
-                sh 'kubectl apply -f k8s-deployment.yaml --validate=false'
+                sh 'KUBECONFIG=/home/vagrant/.kube/config kubectl apply -f k8s-deployment.yaml'
             }
         }
     }
