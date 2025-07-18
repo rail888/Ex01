@@ -39,12 +39,12 @@ pipeline {
                 }
             }
         }*/
-        stage('Deploy to K3s') {
+        stage('5. Deploy to K3s') {
             steps {
-                        sh '''
-                          export KUBECONFIG=/home/vagrant/.kube/config
-                          kubectl apply -f k8s-deployment.yaml
-                        '''
+                sh '''
+                export KUBECONFIG=/home/vagrant/.kube/config
+                kubectl apply -f k8s-deployment.yaml
+                '''
             }
         }
     }
