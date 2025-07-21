@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: {{ .Values.pod.name }}
-      image: "{{ .Values.image.repository }}: {{ .Values.image.tag }}"
+      image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
       ports:
         - containerPort: {{ .Values.containerPort }}
 
