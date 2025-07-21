@@ -19,12 +19,13 @@ pipeline {
                 sh 'docker version'
             }
         }
+        /*
         stage('3. Docker Build') {
             steps {
                 sh 'docker build -t ex01-app:latest .'
             }
         }
-        /*
+        
         stage('4. Docker Push') {
             steps {
                 withCredentials([usernamePassword(
@@ -40,8 +41,8 @@ pipeline {
                 }
             }
         }
-        */
-        /*
+        
+        
         stage('5. Deploy to K3s ') {
             steps {
                 sh '''
@@ -51,14 +52,16 @@ pipeline {
             }
         }
         */
-        stage('Deploy with Helm') {
+        /*
+        stage('6. Deploy with Helm') {
             steps {
                 sh '''
                 export KUBECONFIG=/home/vagrant/.kube/config                
                 helm upgrade --install ex01-app ./charts/ex01-app --namespace default
                 '''
             }
-        }        
+        } 
+        */       
     }
 }
 
