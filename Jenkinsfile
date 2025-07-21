@@ -24,6 +24,7 @@ pipeline {
                 sh 'docker build -t ex01-app:latest .'
             }
         }
+        /*
         stage('4. Docker Push') {
             steps {
                 withCredentials([usernamePassword(
@@ -39,6 +40,8 @@ pipeline {
                 }
             }
         }
+        */
+        /*
         stage('5. Deploy to K3s ') {
             steps {
                 sh '''
@@ -47,6 +50,14 @@ pipeline {
                 '''
             }
         }
+        */
+        stage('Deploy with Helm') {
+            steps {
+                sh '''
+                  helm upgrade --install ex01-app ./charts/ex01-app --namespace default
+                '''
+            }
+        }        
     }
 }
 
