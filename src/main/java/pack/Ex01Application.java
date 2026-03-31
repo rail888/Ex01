@@ -11,7 +11,7 @@ public class Ex01Application {
 	@GetMapping("/")
 	public String hello() {
 		System.out.println("Ex01");
-		return "Ex01 Project:am 10:50";
+		return "Ex01 Project:14:36";
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(Ex01Application.class, args);
