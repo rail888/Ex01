@@ -14,6 +14,11 @@ pipeline {
                 echo '메이븐으로 빌드'
                 sh 'mvn clean package'
             }
-        }		        
+        }
+        stage('2. Check Docker') {
+            steps {
+                sh 'docker version'
+            }
+        }        		        
     }
 }
